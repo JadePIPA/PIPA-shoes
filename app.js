@@ -11,7 +11,6 @@ const sideMenu = document.querySelector("#sideMenu");
 const waitlistForm = document.querySelector("#waitlistForm");
 const success = document.querySelector("#success");
 const cartPreorder = document.querySelector("#cartPreorder");
-const modalPreorder = document.querySelector("#modalPreorder");
 const modalAdd = document.querySelector("#modalAdd");
 
 let currentFilter = "all";
@@ -21,8 +20,6 @@ let cart = [];
 const preorderCopy = {
   label: "Pre-order",
   short: "Pre-order • exp. mi-juillet",
-  modalTitle: "Pre-order drop",
-  modalText: "Tu reserves ta paire maintenant. Le drop reste ouvert quelques jours, puis les commandes sont preparees dans l'ordre d'achat.",
 };
 
 const formatPrice = (price) =>
@@ -41,6 +38,14 @@ const imageMarkup = (product) =>
   product.image
     ? `<img src="${product.image}" alt="${product.name}" loading="lazy" />`
     : illustration(product);
+
+const productMediaMarkup = (product) => {
+  const primary = imageMarkup(product);
+  const hover = product.hoverImage
+    ? `<img class="hover-image" src="${product.hoverImage}" alt="" loading="lazy" />`
+    : "";
+  return `${primary}${hover}`;
+};
 
 const swatches = (product) =>
   `<span class="swatches">${(product.colors || [])
@@ -75,14 +80,13 @@ function renderProducts() {
           <div class="product-media" data-open-product="${product.id}">
             ${isComingSoon(product) ? '<span class="badge">Soon</span>' : ""}
             ${isPreorder(product) ? '<span class="badge preorder">Pre-order</span>' : ""}
-            ${imageMarkup(product)}
+            ${productMediaMarkup(product)}
             <button class="heart" data-add-cart="${product.id}" aria-label="Ajouter ${product.name} au panier">♡</button>
           </div>
           <div class="product-info">
             <h3>${product.name}</h3>
             <p>${product.mood}</p>
             <span class="price">${priceLabel(product)}</span>
-            ${isPreorder(product) ? `<span class="preorder-line">${preorderCopy.short}</span>` : ""}
             ${swatches(product)}
             <div class="quick-actions">
               <button class="mini-button" data-open-product="${product.id}">Voir</button>
@@ -129,10 +133,6 @@ function openProduct(productId) {
   document.querySelector("#modalSwatches").innerHTML = (currentProduct.colors || [])
     .map((color) => `<i style="background:${color}"></i>`)
     .join("");
-  modalPreorder.innerHTML = isPreorder(currentProduct)
-    ? `<strong>${preorderCopy.modalTitle}</strong><p>${preorderCopy.modalText}</p>`
-    : "";
-  modalPreorder.hidden = !isPreorder(currentProduct);
   modalAdd.textContent = isPreorder(currentProduct) ? "Pre-order" : "Add to bag";
 
   productModal.classList.add("open");

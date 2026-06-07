@@ -6,6 +6,7 @@ window.PIPA_PRODUCTS = [
     mood: "Gold girl summer",
     price: 39.99,
     image: "assets/gold-stud-flipflop.png",
+    hoverImage: "assets/drop-suitcase.png",
     colors: ["#d9aa42", "#fff0d1", "#f873a8"],
     description:
       "La paire bijou du premier drop. Doree, facile a porter, parfaite pour transformer une tenue simple en look de vacances.",
@@ -18,6 +19,7 @@ window.PIPA_PRODUCTS = [
     mood: "The safe best seller",
     price: 34.99,
     image: "assets/black-stud-flipflop.png",
+    hoverImage: "assets/drop-street-girls.png",
     colors: ["#15110f", "#c9c2ba", "#fff5e6"],
     description:
       "La version noire, plus facile a acheter mais toujours PIPA. Le detail cloute qui rend un look basique beaucoup plus cool.",
@@ -30,6 +32,7 @@ window.PIPA_PRODUCTS = [
     mood: "Leopard is a neutral",
     price: 49.99,
     image: "assets/leopard-bow-heel.png",
+    hoverImage: "assets/drop-street-girls.png",
     colors: ["#15110f", "#b7764b", "#f5c9d8"],
     description:
       "La paire la plus memorable du drop. Leopard, noeud, talon fin : une chaussure pour les filles qui veulent que la tenue parle.",
@@ -42,6 +45,7 @@ window.PIPA_PRODUCTS = [
     mood: "Date night shoe check",
     price: 49.99,
     image: "assets/polka-bow-heel.png",
+    hoverImage: "assets/drop-suitcase.png",
     colors: ["#15110f", "#fffdf8", "#f873a8"],
     description:
       "Noir a pois, noeud devant, talon feminin. La paire parfaite pour diner, sortir, danser, et se faire demander d'ou elle vient.",
@@ -54,6 +58,7 @@ window.PIPA_PRODUCTS = [
     mood: "Cowgirl but city",
     price: 54.99,
     image: "assets/western-buckle-clog.png",
+    hoverImage: "assets/drop-street-girls.png",
     colors: ["#15110f", "#c9c2ba", "#f5c9d8"],
     description:
       "La paire la plus identitaire. Buckle western, clous argent, attitude cool girl : elle donne a PIPA son mood cowgirl.",
@@ -66,6 +71,7 @@ window.PIPA_PRODUCTS = [
     mood: "Soft girl, loud shoes",
     price: 45.99,
     image: "assets/pink-bow-heel.png",
+    hoverImage: "assets/drop-suitcase.png",
     colors: ["#f5c9d8", "#fff5e6", "#d9aa42"],
     description:
       "Rose doux, petit noeud et talon feminin. Une paire plus soft, mais toujours assez speciale pour signer un look PIPA.",
