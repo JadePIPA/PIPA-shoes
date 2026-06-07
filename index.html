@@ -1,0 +1,215 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>PIPA - The Cool Girl Shoe Club</title>
+    <meta
+      name="description"
+      content="PIPA, The Cool Girl Shoe Club. Chaussures colorees, abordables et desirables."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Anton&family=Instrument+Serif:ital@0;1&family=Manrope:wght@500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="topline" aria-hidden="true">
+      <span>First drop coming soon ★ The Cool Girl Shoe Club ★ Colorful statement shoes ★ </span>
+      <span>First drop coming soon ★ The Cool Girl Shoe Club ★ Colorful statement shoes ★ </span>
+      <span>First drop coming soon ★ The Cool Girl Shoe Club ★ Colorful statement shoes ★ </span>
+    </div>
+
+    <header class="header">
+      <nav class="nav" aria-label="Navigation principale">
+        <button class="icon menu-button" aria-label="Menu">
+          <span class="menu-lines" aria-hidden="true"><i></i><i></i><i></i></span>
+        </button>
+        <a class="logo" href="#top">PIPA<span class="star">★</span></a>
+        <div class="nav-icons">
+          <a class="icon" href="#shop" aria-label="Rechercher">⌕</a>
+          <button class="icon" id="openCart" aria-label="Ouvrir le panier">♡</button>
+          <button class="cart-button" id="openCart2" aria-label="Ouvrir le panier">
+            <span>Bag</span><strong id="cartCount">0</strong>
+          </button>
+        </div>
+      </nav>
+    </header>
+
+    <aside class="side-menu" id="sideMenu" aria-hidden="true">
+      <button class="close-button" data-close-menu aria-label="Fermer">×</button>
+      <a href="#shop" data-close-menu>Shop</a>
+      <a href="#moods" data-close-menu>Moods</a>
+      <a href="#club" data-close-menu>PIPA Club</a>
+      <a href="#launch" data-close-menu>Lancement</a>
+    </aside>
+
+    <main id="top">
+      <section class="stories" aria-label="Categories">
+        <a class="story" href="#shop" data-filter-link="all">
+          <span class="story-img"><img src="assets/tile-sandal.png" alt="" /></span>
+          <span>What's new</span>
+        </a>
+        <a class="story" href="#shop" data-filter-link="birks">
+          <span class="story-img"><img src="assets/tile-birks.png" alt="" /></span>
+          <span>Color Birks</span>
+        </a>
+        <a class="story" href="#shop" data-filter-link="cowgirl">
+          <span class="story-img"><img src="assets/tile-mule.png" alt="" /></span>
+          <span>Cowgirl</span>
+        </a>
+        <a class="story" href="#shop" data-filter-link="ballerines">
+          <span class="story-img"><img src="assets/crop-cowgirl.png" alt="" /></span>
+          <span>Ballerines</span>
+        </a>
+        <a class="story" href="#club">
+          <span class="story-img"><img src="assets/crop-tennis.png" alt="" /></span>
+          <span>PIPA Club</span>
+        </a>
+      </section>
+
+      <section class="hero">
+        <div class="hero-image">
+          <img src="assets/tile-color-line.png" alt="Selection de chaussures colorees PIPA" />
+        </div>
+        <span class="float-star one" aria-hidden="true">★</span>
+        <span class="float-star two" aria-hidden="true">★</span>
+        <div class="hero-copy">
+          <p class="eyebrow">The Cool Girl Shoe Club</p>
+          <h1>Meet your new obsession.</h1>
+          <p>Fun shoes for cool girls. Color, charms, stars and vacation energy.</p>
+          <div class="hero-actions">
+            <a class="button" href="#shop">Shop the mood</a>
+            <a class="button ghost" href="#club">Join the club</a>
+          </div>
+        </div>
+      </section>
+
+      <section class="shop-section" id="shop">
+        <div class="section-head reveal">
+          <div>
+            <p class="eyebrow dark">Online shop ready</p>
+            <h2>News</h2>
+          </div>
+          <a href="#club">First access</a>
+        </div>
+
+        <div class="filters reveal" aria-label="Filtres produits">
+          <button class="filter active" data-filter="all">All</button>
+          <button class="filter" data-filter="sandales">Sandales</button>
+          <button class="filter" data-filter="birks">Color Birks</button>
+          <button class="filter" data-filter="cowgirl">Cowgirl</button>
+          <button class="filter" data-filter="ballerines">Ballerines</button>
+        </div>
+
+        <div class="product-grid" id="productGrid"></div>
+      </section>
+
+      <section class="mood-strip" id="moods">
+        <div class="mood-inner">
+          <a class="mood-card reveal" href="#shop" data-filter-link="sandales">
+            <img src="assets/crop-tennis.png" alt="Italian summer mood" />
+            <span>Italian<br />Summer</span>
+          </a>
+          <a class="mood-card reveal" href="#shop" data-filter-link="cowgirl">
+            <img src="assets/crop-cowgirl.png" alt="Cowgirl cool mood" />
+            <span>Cowgirl<br />Cool</span>
+          </a>
+          <a class="mood-card reveal" href="#shop" data-filter-link="birks">
+            <img src="assets/tile-color-line.png" alt="Color club mood" />
+            <span>Color<br />Club</span>
+          </a>
+        </div>
+      </section>
+
+      <section class="launch" id="launch">
+        <div class="section-head reveal">
+          <div>
+            <p class="eyebrow dark">Built to launch</p>
+            <h2>Tu ajoutes tes produits, le site suit.</h2>
+          </div>
+        </div>
+        <div class="launch-grid">
+          <article class="launch-card reveal">
+            <strong>01</strong>
+            <h3>Ajoute le produit</h3>
+            <p>Nom, prix, image, categorie, couleurs et description dans <code>products.js</code>.</p>
+          </article>
+          <article class="launch-card reveal">
+            <strong>02</strong>
+            <h3>Mets en ligne</h3>
+            <p>Le dossier peut etre depose sur Netlify, Vercel ou l'hebergeur de ton choix.</p>
+          </article>
+          <article class="launch-card reveal">
+            <strong>03</strong>
+            <h3>Connecte le paiement</h3>
+            <p>Pour vendre vraiment, branche ensuite Shopify, Stripe Payment Links ou un checkout.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="club" id="club">
+        <div class="club-inner">
+          <div class="club-copy reveal">
+            <p class="eyebrow">PIPA Club</p>
+            <h2>The Cool Girl Shoe Club</h2>
+            <p>
+              PIPA n'est pas juste une paire de chaussures. C'est le detail qui donne une
+              personnalite au look.
+            </p>
+          </div>
+          <div class="newsletter reveal">
+            <h3>First drop first.</h3>
+            <form id="waitlistForm">
+              <label for="email" class="sr-only">Email</label>
+              <input id="email" name="email" type="email" placeholder="your email" required />
+              <button class="button" type="submit">Subscribe</button>
+            </form>
+            <div class="success" id="success">You're in. Welcome to PIPA.</div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <div class="product-modal" id="productModal" aria-hidden="true">
+      <div class="modal-panel" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+        <button class="close-button" data-close-modal aria-label="Fermer">×</button>
+        <div class="modal-image" id="modalImage"></div>
+        <div class="modal-copy">
+          <p class="eyebrow dark" id="modalCategory"></p>
+          <h2 id="modalTitle"></h2>
+          <p id="modalDescription"></p>
+          <strong id="modalPrice"></strong>
+          <div class="modal-swatches" id="modalSwatches"></div>
+          <button class="button" id="modalAdd">Add to bag</button>
+        </div>
+      </div>
+    </div>
+
+    <aside class="cart-drawer" id="cartDrawer" aria-hidden="true">
+      <div class="cart-head">
+        <h2>Bag</h2>
+        <button class="close-button" data-close-cart aria-label="Fermer">×</button>
+      </div>
+      <div class="cart-items" id="cartItems"></div>
+      <div class="cart-foot">
+        <div><span>Total</span><strong id="cartTotal">0,00 €</strong></div>
+        <button class="button full">Checkout bientot</button>
+        <p>Le panier est pret pour la demo. Pour encaisser, il faudra connecter Shopify ou Stripe.</p>
+      </div>
+    </aside>
+
+    <footer>
+      <div class="footer-inner">
+        <a class="logo" href="#top">PIPA<span class="star">★</span></a>
+        <p>Colorful shoes for girls with personality</p>
+      </div>
+    </footer>
+
+    <script src="products.js"></script>
+    <script src="app.js"></script>
+  </body>
+</html>
