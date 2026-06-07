@@ -208,11 +208,13 @@ code {
 }
 
 .stories {
+  align-items: flex-start;
   border-bottom: 1px solid var(--line);
   display: flex;
-  gap: 16px;
+  gap: clamp(24px, 5vw, 84px);
+  justify-content: center;
   overflow-x: auto;
-  padding: 14px clamp(14px, 4vw, 48px) 16px;
+  padding: 20px clamp(24px, 6vw, 92px) 22px;
   scrollbar-width: none;
 }
 
@@ -221,7 +223,7 @@ code {
 }
 
 .story {
-  flex: 0 0 78px;
+  flex: 0 0 clamp(112px, 11vw, 150px);
   text-align: center;
   transform: translateY(0);
   transition: transform 180ms ease;
@@ -237,10 +239,10 @@ code {
     linear-gradient(135deg, var(--pink), var(--yellow), var(--green), var(--blue)) border-box;
   border: 2px solid transparent;
   border-radius: 999px;
-  height: 70px;
-  margin: 0 auto 7px;
+  height: clamp(92px, 9vw, 118px);
+  margin: 0 auto 10px;
   overflow: hidden;
-  width: 70px;
+  width: clamp(92px, 9vw, 118px);
 }
 
 .story-img img {
@@ -251,7 +253,7 @@ code {
 
 .story span {
   display: block;
-  font-size: 11px;
+  font-size: clamp(12px, 1vw, 14px);
   font-weight: 800;
   line-height: 1.1;
 }
@@ -1115,6 +1117,7 @@ footer p {
 
   .stories {
     gap: 12px;
+    justify-content: flex-start;
     padding-inline: 12px;
   }
 
