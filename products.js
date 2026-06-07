@@ -9,7 +9,7 @@ window.PIPA_PRODUCTS = [
     colors: ["#d9aa42", "#fff0d1", "#f873a8"],
     description:
       "La paire bijou du premier drop. Doree, facile a porter, parfaite pour transformer une tenue simple en look de vacances.",
-    status: "available",
+    status: "preorder",
   },
   {
     id: "black-stud-flip",
@@ -21,7 +21,7 @@ window.PIPA_PRODUCTS = [
     colors: ["#15110f", "#c9c2ba", "#fff5e6"],
     description:
       "La version noire, plus facile a acheter mais toujours PIPA. Le detail cloute qui rend un look basique beaucoup plus cool.",
-    status: "available",
+    status: "preorder",
   },
   {
     id: "leopard-bow-mule",
@@ -33,7 +33,7 @@ window.PIPA_PRODUCTS = [
     colors: ["#15110f", "#b7764b", "#f5c9d8"],
     description:
       "La paire la plus memorable du drop. Leopard, noeud, talon fin : une chaussure pour les filles qui veulent que la tenue parle.",
-    status: "available",
+    status: "preorder",
   },
   {
     id: "polka-bow-heel",
@@ -45,7 +45,7 @@ window.PIPA_PRODUCTS = [
     colors: ["#15110f", "#fffdf8", "#f873a8"],
     description:
       "Noir a pois, noeud devant, talon feminin. La paire parfaite pour diner, sortir, danser, et se faire demander d'ou elle vient.",
-    status: "available",
+    status: "preorder",
   },
   {
     id: "rodeo-buckle-clog",
@@ -57,7 +57,7 @@ window.PIPA_PRODUCTS = [
     colors: ["#15110f", "#c9c2ba", "#f5c9d8"],
     description:
       "La paire la plus identitaire. Buckle western, clous argent, attitude cool girl : elle donne a PIPA son mood cowgirl.",
-    status: "available",
+    status: "preorder",
   },
   {
     id: "baby-bow-mule",
@@ -69,6 +69,6 @@ window.PIPA_PRODUCTS = [
     colors: ["#f5c9d8", "#fff5e6", "#d9aa42"],
     description:
       "Rose doux, petit noeud et talon feminin. Une paire plus soft, mais toujours assez speciale pour signer un look PIPA.",
-    status: "available",
+    status: "preorder",
   },
 ];

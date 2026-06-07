@@ -10,10 +10,20 @@ const productModal = document.querySelector("#productModal");
 const sideMenu = document.querySelector("#sideMenu");
 const waitlistForm = document.querySelector("#waitlistForm");
 const success = document.querySelector("#success");
+const cartPreorder = document.querySelector("#cartPreorder");
+const modalPreorder = document.querySelector("#modalPreorder");
+const modalAdd = document.querySelector("#modalAdd");
 
 let currentFilter = "all";
 let currentProduct = null;
 let cart = [];
+
+const preorderCopy = {
+  label: "Pre-order",
+  short: "Pre-order • exp. mi-juillet",
+  modalTitle: "Pre-order drop",
+  modalText: "Tu reserves ta paire maintenant. Le drop reste ouvert quelques jours, puis les commandes sont preparees dans l'ordre d'achat.",
+};
 
 const formatPrice = (price) =>
   price.toLocaleString("fr-FR", { style: "currency", currency: "EUR" });
@@ -37,6 +47,21 @@ const swatches = (product) =>
     .map((color) => `<i style="background:${color}"></i>`)
     .join("")}</span>`;
 
+const isPreorder = (product) => product.status === "preorder";
+const isComingSoon = (product) => product.status === "coming-soon";
+const canAddToCart = (product) => product && !isComingSoon(product);
+
+const actionLabel = (product) => {
+  if (isComingSoon(product)) return "Notify";
+  if (isPreorder(product)) return "Pre-order";
+  return "Ajouter";
+};
+
+const priceLabel = (product) => {
+  if (isComingSoon(product)) return "Coming soon";
+  return formatPrice(product.price);
+};
+
 function renderProducts() {
   const visibleProducts =
     currentFilter === "all"
@@ -48,20 +73,20 @@ function renderProducts() {
       (product) => `
         <article class="product-card reveal" data-product-id="${product.id}">
           <div class="product-media" data-open-product="${product.id}">
-            ${product.status === "coming-soon" ? '<span class="badge">Soon</span>' : ""}
+            ${isComingSoon(product) ? '<span class="badge">Soon</span>' : ""}
+            ${isPreorder(product) ? '<span class="badge preorder">Pre-order</span>' : ""}
             ${imageMarkup(product)}
             <button class="heart" data-add-cart="${product.id}" aria-label="Ajouter ${product.name} au panier">♡</button>
           </div>
           <div class="product-info">
             <h3>${product.name}</h3>
             <p>${product.mood}</p>
-            <span class="price">${product.status === "coming-soon" ? "Coming soon" : formatPrice(product.price)}</span>
+            <span class="price">${priceLabel(product)}</span>
+            ${isPreorder(product) ? `<span class="preorder-line">${preorderCopy.short}</span>` : ""}
             ${swatches(product)}
             <div class="quick-actions">
               <button class="mini-button" data-open-product="${product.id}">Voir</button>
-              <button class="mini-button" data-add-cart="${product.id}">${
-                product.status === "coming-soon" ? "Notify" : "Ajouter"
-              }</button>
+              <button class="mini-button" data-add-cart="${product.id}">${actionLabel(product)}</button>
             </div>
           </div>
         </article>
@@ -99,12 +124,16 @@ function openProduct(productId) {
   document.querySelector("#modalCategory").textContent = currentProduct.mood;
   document.querySelector("#modalTitle").textContent = currentProduct.name;
   document.querySelector("#modalDescription").textContent = currentProduct.description;
-  document.querySelector("#modalPrice").textContent =
-    currentProduct.status === "coming-soon" ? "Coming soon" : formatPrice(currentProduct.price);
+  document.querySelector("#modalPrice").textContent = priceLabel(currentProduct);
   document.querySelector("#modalImage").innerHTML = imageMarkup(currentProduct);
   document.querySelector("#modalSwatches").innerHTML = (currentProduct.colors || [])
     .map((color) => `<i style="background:${color}"></i>`)
     .join("");
+  modalPreorder.innerHTML = isPreorder(currentProduct)
+    ? `<strong>${preorderCopy.modalTitle}</strong><p>${preorderCopy.modalText}</p>`
+    : "";
+  modalPreorder.hidden = !isPreorder(currentProduct);
+  modalAdd.textContent = isPreorder(currentProduct) ? "Pre-order" : "Add to bag";
 
   productModal.classList.add("open");
   productModal.setAttribute("aria-hidden", "false");
@@ -119,7 +148,7 @@ function closeProduct() {
 
 function addToCart(productId) {
   const product = products.find((item) => item.id === productId);
-  if (!product || product.status === "coming-soon") {
+  if (!canAddToCart(product)) {
     openProduct(productId);
     return;
   }
@@ -146,6 +175,7 @@ function renderCart() {
 
   cartCount.textContent = count;
   cartTotal.textContent = formatPrice(total);
+  cartPreorder.hidden = !cart.some(isPreorder);
 
   cartItems.innerHTML =
     cart.length === 0
@@ -158,6 +188,7 @@ function renderCart() {
                 <div>
                   <h3>${item.name}</h3>
                   <p>${item.quantity} x ${formatPrice(item.price)}</p>
+                  ${isPreorder(item) ? `<p class="cart-meta">${preorderCopy.short}</p>` : ""}
                 </div>
                 <button class="remove" data-remove="${item.id}" aria-label="Retirer ${item.name}">×</button>
               </div>
@@ -231,7 +262,7 @@ document.querySelectorAll("#openCart, #openCart2").forEach((button) => {
 
 document.querySelector("[data-close-cart]").addEventListener("click", closeCart);
 document.querySelector("[data-close-modal]").addEventListener("click", closeProduct);
-document.querySelector("#modalAdd").addEventListener("click", () => {
+modalAdd.addEventListener("click", () => {
   if (currentProduct) addToCart(currentProduct.id);
 });
 
