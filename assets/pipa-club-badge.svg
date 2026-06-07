@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 600" role="img" aria-label="PIPA Club">
+  <defs>
+    <radialGradient id="bg" cx="50%" cy="42%" r="70%">
+      <stop offset="0%" stop-color="#fff7df"/>
+      <stop offset="52%" stop-color="#ffd3de"/>
+      <stop offset="100%" stop-color="#ee7fa5"/>
+    </radialGradient>
+    <pattern id="stars" width="92" height="92" patternUnits="userSpaceOnUse" patternTransform="rotate(-12)">
+      <path d="M46 10l9 25 26 1-21 16 7 25-21-15-22 15 7-25-21-16 27-1z" fill="#ffd340" stroke="#1d1717" stroke-width="3"/>
+    </pattern>
+  </defs>
+  <rect width="600" height="600" rx="300" fill="url(#bg)"/>
+  <rect width="600" height="600" rx="300" fill="url(#stars)" opacity=".16"/>
+  <circle cx="300" cy="300" r="248" fill="none" stroke="#1d1717" stroke-width="16"/>
+  <circle cx="300" cy="300" r="219" fill="none" stroke="#fff7df" stroke-width="8"/>
+  <path d="M300 87l18 54 57 1-45 34 16 55-46-33-47 33 16-55-45-34 57-1z" fill="#ffd340" stroke="#1d1717" stroke-width="10"/>
+  <text x="300" y="306" text-anchor="middle" font-family="Arial Black, Arial, sans-serif" font-size="112" font-weight="900" fill="#1d1717" letter-spacing="2">PIPA</text>
+  <text x="300" y="386" text-anchor="middle" font-family="Arial Black, Arial, sans-serif" font-size="68" font-weight="900" fill="#e85f92" letter-spacing="6">CLUB</text>
+  <path d="M124 453c52 34 110 52 176 52s124-18 176-52" fill="none" stroke="#1d1717" stroke-width="13" stroke-linecap="round"/>
+  <circle cx="152" cy="183" r="13" fill="#1d1717"/>
+  <circle cx="448" cy="183" r="13" fill="#1d1717"/>
+  <text x="300" y="456" text-anchor="middle" font-family="Arial, sans-serif" font-size="30" font-weight="800" fill="#1d1717" letter-spacing="2">DROP ALERTS</text>
+</svg>
