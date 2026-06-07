@@ -735,45 +735,6 @@ h2 {
   z-index: 1;
 }
 
-.launch-grid {
-  display: grid;
-  gap: 14px;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  margin: 0 auto;
-  max-width: 1320px;
-}
-
-.launch-card {
-  background: var(--cream);
-  border-radius: var(--radius);
-  min-height: 190px;
-  padding: 18px;
-}
-
-.launch-card strong {
-  color: var(--red);
-  display: block;
-  font-family: Anton, Impact, sans-serif;
-  font-size: 42px;
-  font-weight: 400;
-  line-height: 0.9;
-  margin-bottom: 18px;
-}
-
-.launch-card h3 {
-  font-size: 20px;
-  line-height: 1;
-  margin: 0;
-}
-
-.launch-card p {
-  color: var(--muted);
-  font-size: 14px;
-  font-weight: 700;
-  line-height: 1.35;
-  margin: 10px 0 0;
-}
-
 .club {
   background: var(--ink);
   color: var(--cream);
@@ -1115,8 +1076,7 @@ footer p {
 }
 
 @media (max-width: 900px) {
-  .product-grid,
-  .launch-grid {
+  .product-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
@@ -1184,12 +1144,6 @@ footer p {
 
   .float-star.two {
     display: none;
-  }
-
-  .product-grid,
-  .launch-grid {
-    gap: 16px 12px;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
   .quick-actions {
