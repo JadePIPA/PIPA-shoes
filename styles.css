@@ -274,7 +274,7 @@ code {
   animation: slowZoom 14s ease-in-out infinite alternate;
   height: 100%;
   object-fit: cover;
-  object-position: center 46%;
+  object-position: center 54%;
   width: 100%;
 }
 
@@ -536,6 +536,7 @@ h2 {
 
 .product-media img {
   object-fit: cover;
+  object-position: center 56%;
   transition: transform 550ms ease;
 }
 
@@ -709,6 +710,7 @@ h2 {
 .mood-card img {
   height: 100%;
   object-fit: cover;
+  object-position: center 56%;
   position: absolute;
   transition: transform 700ms ease;
   width: 100%;

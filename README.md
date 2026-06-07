@@ -11,7 +11,7 @@ Ouvre `products.js` et ajoute un bloc comme celui-ci dans la liste :
   id: "nom-simple-sans-espace",
   name: "Nom du produit",
   category: "sandales",
-  mood: "Italian summer",
+  mood: "Gold girl summer",
   price: 39.99,
   image: "assets/mon-image.png",
   colors: ["#f873a8", "#ffd84f", "#315f8a"],
@@ -23,9 +23,8 @@ Ouvre `products.js` et ajoute un bloc comme celui-ci dans la liste :
 Categories possibles :
 
 - `sandales`
-- `birks`
+- `heels`
 - `cowgirl`
-- `ballerines`
 
 Statuts possibles :
 
